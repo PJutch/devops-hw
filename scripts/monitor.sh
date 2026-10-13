@@ -20,7 +20,7 @@ case "$systemctl_rc" in
     0) echo "active" ;;
     3) 
         echo "inactive, showing service logs:" 
-        journalctl -u "$service" -n 10 || error "journalctl failed"
+        journalctl -u "$service" -n 10 --no-pager || error "journalctl failed"
         
         message_count=$(awk '$1 > strftime("%Y-%m-%dT%H:%M:%S", systime() - 3600)' /var/log/syslog | grep "$service" | wc -l \
                         || error "reading /var/log/syslog failed")
