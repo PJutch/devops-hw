@@ -18,7 +18,6 @@ terraform apply "tfplan"
 ![terraform-bottom](./screenshots/terraform-bottom.png)
 
 ## Bash
-На удалённой машине
 ```bash
 bash scripts/monitor.sh <service>
 ```
@@ -30,8 +29,8 @@ bash scripts/monitor.sh <service>
 cd app
 docker compose up -d
 ```
+На локальной машине
 ```bash
 curl <remote machine>:8080
 ```
-На локальной машине
 ![docker-compose](./screenshots/docker-compose.png)
